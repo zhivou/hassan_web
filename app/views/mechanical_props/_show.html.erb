@@ -1,0 +1,21 @@
+<div class="d-flex bd-highlight mb-3 justify-content-center">
+  <div class="p-2 bd-highlight">
+    <p><strong><u>Steel Information:</u></strong></p>
+    <div class="display-5">
+      Carbon content:
+      <%= @mechanical_prop.carbon %>
+    </div>
+    <div class="display-5">
+      Base metal martensite fraction:
+      <%= @mechanical_prop.structure %>
+    </div>
+  </div>
+
+  <div class="p-2 bd-highlight">
+    <p><strong><u>Calculated Mechanical Properties:</u></strong></p>
+    <div class="display-5">Hardness (HV): <%= @calc_result[:hardness] %></div>
+    <div class="display-5">Proof Yield Stress (MPa): <%= @calc_result[:yield_stress] %></div>
+    <div class="display-5 mb-4">Tensile Stress (MPa): <%= @calc_result[:tensile_stress] %></div>
+  </div>
+</div>
+

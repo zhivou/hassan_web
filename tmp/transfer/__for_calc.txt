@@ -1,0 +1,1 @@
+Calculate with following variables:{"id"=>nil, "parameter_1"=>"1.0", "parameter_2"=>nil, "parameter_3"=>nil, "parameter_4"=>nil, "email"=>"", "first_name"=>"", "last_name"=>"", "note"=>"", "created_at"=>nil, "updated_at"=>nil}

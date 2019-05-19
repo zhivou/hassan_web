@@ -1,0 +1,35 @@
+<div class="container text-center mt-5" style="border: 1px solid black">
+  <p id="notice"><%= notice %></p>
+
+  <p class="display-4">
+    <%= @mechanical_prop.id %>
+  </p>
+
+  <p>
+    <strong>Structure:</strong>
+    <%= @mechanical_prop.structure %>
+  </p>
+
+  <p>
+    <strong>Carbon:</strong>
+    <%= @mechanical_prop.carbon %>
+  </p>
+
+  <p>
+    <strong>Hardness (HV):</strong>
+    <%= @mechanical_prop.hardness_hv %>
+  </p>
+
+  <p>
+    <strong>Proof Yield Stress (MPa):</strong>
+    <%= @mechanical_prop.proof_yield_stress %>
+  </p>
+
+  <p>
+    <strong>Tensile Stress (MPa):</strong>
+    <%= @mechanical_prop.tensile_stress %>
+  </p>
+
+  <%= link_to 'Edit', edit_mechanical_prop_path, class: "btn btn-success btn-lg btn-block", style: "color: white" %>
+  <%= link_to 'Back', show_mechanical_props_path, class: "btn btn-secondary btn-lg btn-block", style: "color: white" %>
+</div>

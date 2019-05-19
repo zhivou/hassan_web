@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="display-5 text-center">Users:</div>
+  <table class="mx-auto col-sm-4" style="border: 1px solid black;">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @users.each do |user| %>
+      <tr style="border: 1px solid black">
+        <td><%= user.name %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'Back', admin_path, class: "btn btn-secondary btn-lg btn-block", style: "color: white; margin-top: 20px;" %>
+</div>

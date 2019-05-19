@@ -1,0 +1,57 @@
+<div class="container text-center mt-5" style="border: 1px solid black">
+  <div class="container text-center">
+    <p id="notice"><%= notice %></p>
+  </div>
+
+  <p class="display-4">
+    <%= @generator.id %>
+  </p>
+
+  <p class="display-4">
+    <%= @generator.status = 'In process' %> <!-- UPDATE WITH A REAL STATUS FORM CONTROLLER-->
+  </p>
+
+
+  <p>
+    <strong>A vol:</strong>
+    <%= @generator.a_vol %>
+  </p>
+
+  <p>
+    <strong>B vol:</strong>
+    <%= @generator.b_vol %>
+  </p>
+
+  <p>
+    <strong>C vol:</strong>
+    <%= @generator.c_vol %>
+  </p>
+
+  <p>
+    <strong>D vol:</strong>
+    <%= @generator.d_vol %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= @generator.email %>
+  </p>
+
+  <p>
+    <strong>First name:</strong>
+    <%= @generator.first_name %>
+  </p>
+
+  <p>
+    <strong>Last name:</strong>
+    <%= @generator.last_name %>
+  </p>
+
+  <p>
+    <strong>Note:</strong>
+    <%= @generator.note %>
+  </p>
+
+  <%= link_to 'Edit', edit_generator_path(@generator), class: "btn btn-success btn-lg btn-block", style: "color: white" %>
+  <%= link_to 'Back', jobs_path, class: "btn btn-secondary btn-lg btn-block", style: "color: white" %>
+</div>

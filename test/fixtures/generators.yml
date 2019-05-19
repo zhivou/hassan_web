@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  a_vol: 9.99
+  b_vol: 9.99
+  c_vol: 9.99
+  d_vol: 9.99
+  email: MyString
+  first_name: MyString
+  last_name: MyString
+  note: MyText
+
+two:
+  a_vol: 9.99
+  b_vol: 9.99
+  c_vol: 9.99
+  d_vol: 9.99
+  email: MyString
+  first_name: MyString
+  last_name: MyString
+  note: MyText

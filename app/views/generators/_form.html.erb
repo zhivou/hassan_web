@@ -1,0 +1,65 @@
+<div style="margin-top: 20px;">
+  <%= form_with(model: generator, local: true) do |form| %>
+    <% if generator.errors.any? %>
+      <div id="error_explanation" class="container text-center">
+        <h2><%= pluralize(generator.errors.count, "error") %> prohibited this generator from being saved:</h2>
+
+        <ul>
+        <% generator.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <div class="container" style="padding: 300px; padding-bottom: 0; padding-top: 0">
+        <h5>Variables:</h5>
+        <div class="field">
+          <%= form.text_field :a_vol, id: :generator_a_vol, class: "form-control", placeholder: :a_vol %>
+        </div>
+
+        <div class="field">
+          <%= form.text_field :b_vol, id: :generator_b_vol, class: "form-control", placeholder: :b_vol %>
+        </div>
+
+        <div class="field">
+          <%= form.text_field :c_vol, id: :generator_c_vol, class: "form-control", placeholder: :c_vol %>
+        </div>
+
+        <div class="field">
+          <%= form.text_field :d_vol, id: :generator_d_vol, class: "form-control", placeholder: :d_vol %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="container" style="padding: 300px; padding-top: 0; padding-bottom: 0">
+        <h5>Contact Information:</h5>
+        <div class="field">
+          <%= form.text_field :email, id: :generator_email, class: "form-control", placeholder: :email %>
+        </div>
+
+        <div class="field">
+          <%= form.text_field :first_name, id: :generator_first_name, class: "form-control", placeholder: :first_name %>
+        </div>
+
+        <div class="field">
+          <%= form.text_field :last_name, id: :generator_last_name, class: "form-control", placeholder: :last_name %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group mt-5">
+      <div class="field">
+        <div class="container">
+          <%= form.text_area :note, id: :generator_note, rows: 5, cols: 60, class:"form-control", placeholder: :note %>
+        </div>
+      </div>
+    </div>
+
+    <div class="actions" style="padding-top: 20px;">
+      <button class="btn btn-success btn-lg btn-block" type="submit" value="Create Generator" data-disable-with="Create Generator" name="commit">Send</button>
+    </div>
+  <% end %>
+</div>

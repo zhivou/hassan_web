@@ -1,0 +1,40 @@
+<div style="display: block;" id="formContainer">
+  <%= form_with(model: mechanical_prop, id: 'form_id', remote: true) do |form| %>
+    <% if mechanical_prop.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(mechanical_prop.errors.count, "error") %> prohibited this mechanical_prop from being saved:</h2>
+
+        <ul>
+          <% mechanical_prop.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <div class="container" style="padding: 300px; padding-bottom: 0; padding-top: 0">
+        <div class="mb-2">
+          <span class="mb-1 mr-5">
+            Bulk Carbon Content (Wt.%, 0-0.4%):
+          </span>
+          <span class="field">
+          <%= form.number_field :carbon, id: :mechanical_prop_carbon, onchange: "handleChange(this);", step: 0.000001 %>
+          </span>
+        </div>
+
+        <div>
+          <span class="mb-1 mr-5">
+            Martensite Fraction (Vol.%, 0-100% ):
+          </span>
+          <span class="field">
+            <%= form.number_field :structure, id: :mechanical_prop_structure, onchange: "handleStructure(this)", style: "align-items: center;" %>
+          </span>
+        </div>
+      </div>
+      <div class="actions mt-5">
+        <%= form.submit class: 'btn btn-success btn-lg btn-block', style: "color: white;", value: "Calculate Properties"%>
+      </div>
+    </div>
+  <% end %>
+</div>

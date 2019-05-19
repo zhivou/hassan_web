@@ -1,0 +1,1 @@
+Calculate with following variables:{"id"=>87, "parameter_1"=>"1.0", "parameter_2"=>"3.0", "parameter_3"=>"4.0", "parameter_4"=>"4.0", "email"=>"safareman2009@gmail.com", "first_name"=>"h", "last_name"=>"r", "note"=>"sef\r\nsdf", "created_at"=>"2019-04-01 04:51:49 UTC", "updated_at"=>"2019-04-01 04:51:49 UTC"}

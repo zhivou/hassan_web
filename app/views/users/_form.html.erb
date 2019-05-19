@@ -1,0 +1,33 @@
+
+<div style="margin-top: 20px;">
+  <%= form_with(model: user, local: true, class: "form-group") do |form| %>
+    <% if user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+        <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="container" style="padding: 300px; padding-bottom: 0; padding-top: 0">
+      <div class="field">
+        <%= form.text_field :name, id: :user_name, class: "form-control", placeholder: :name%>
+      </div>
+
+      <div class="field">
+        <%= form.password_field :password, id: :user_password, class: "form-control", placeholder: :password %>
+      </div>
+
+      <div class="field">
+        <%= form.password_field :password_confirmation, id: :user_password_confirmation, class: "form-control", placeholder: :password_confirmation  %>
+      </div>
+    </div>
+      <div class="actions">
+        <%= form.submit class: "btn btn-success btn-lg btn-block" %>
+      </div>
+    </div>
+  <% end %>

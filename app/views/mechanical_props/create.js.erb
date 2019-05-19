@@ -1,0 +1,11 @@
+// Renders _show template once saved.
+$('#results').html("<%=j render 'show', mechanical_prop: @mechanical_prop %>");
+
+// Once saved will set all field to 0.
+$('#mechanical_prop_carbon').val('')
+$('#mechanical_prop_structure').val('');
+$('#mechanical_prop_value').val('');
+
+// Changing form after calculation is complete:
+$('#formContainer').css('display', 'none');
+$('#newCalcButton').css('display', 'block');

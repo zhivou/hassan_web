@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HassanWeb</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="line" style="border-bottom: 1px solid #d3d7cf; display: block; height: auto; margin-bottom: 20px;">
+      <div class="container">
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <%= link_to 'Home', generators_path, class: "nav-link active"%>
+          </li>
+          <% if session[:user_id] %>
+            <li class="nav-item">
+              <%= link_to 'Admin', admin_path, class: "nav-link active" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Logout', logout_path, method: :destroy, class: "nav-link active" %>
+            </li>
+          <%else %>
+            <li class="nav-item">
+              <%= link_to 'Login', login_path, class: "nav-link active"%>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+  <%= yield %>
+    <footer id="footer" style="border-top: 1px solid #d3d7cf; display: block; height: 80px; margin-top: 50px">
+      <div class="container" style="font-size: 10px">
+        I am a Footer
+        Social media links?
+        Rights?
+        Publications?
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

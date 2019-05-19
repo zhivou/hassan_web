@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="display-5">Mechanical Props:</div>
+  <table style="border: 1px solid black; width: 100%;">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Carbon</th>
+      <th>Structure</th>
+      <th>Hardness (HV)</th>
+      <th>Proof Yield Stress (MPa)</th>
+      <th>Tensile Stress (MPa)</th>
+      <th colspan="3"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @mechanical_props.each do |mechanical_prop| %>
+      <tr style="border: 1px solid black">
+        <td><%= mechanical_prop.id %></td>
+        <td><%= mechanical_prop.carbon %></td>
+        <td><%= mechanical_prop.structure %></td>
+        <td><%= mechanical_prop.hardness_hv %></td>
+        <td><%= mechanical_prop.proof_yield_stress %></td>
+        <td><%= mechanical_prop.tensile_stress %></td>
+        <td><%= link_to 'Show', mechanical_prop %></td>
+        <td><%= link_to 'Edit', edit_mechanical_prop_path(mechanical_prop) %></td>
+        <td><%= link_to 'Destroy', mechanical_prop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @mechanical_props %>
+  <%= link_to 'Back', admin_path, class: "btn btn-secondary btn-lg btn-block", style: "color: white; margin-top: 20px;" %>
+</div>

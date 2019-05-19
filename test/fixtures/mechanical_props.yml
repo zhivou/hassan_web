@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  carbon: 9.99
+  structure: 1
+  hv: 9.99
+  ys: 9.99
+  ut: 9.99
+
+two:
+  carbon: 9.99
+  structure: 1
+  hv: 9.99
+  ys: 9.99
+  ut: 9.99

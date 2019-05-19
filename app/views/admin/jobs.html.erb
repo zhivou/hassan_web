@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="display-5">Jobs submitted:</div>
+  <table style="border: 1px solid black; width: 100%;">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>A vol</th>
+      <th>B vol</th>
+      <th>C vol</th>
+      <th>D vol</th>
+      <th>Email</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Note</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @generators.each do |generator| %>
+      <tr style="border: 1px solid black">
+        <td><%= generator.id %></td>
+        <td><%= generator.a_vol %></td>
+        <td><%= generator.b_vol %></td>
+        <td><%= generator.c_vol %></td>
+        <td><%= generator.d_vol %></td>
+        <td><%= generator.email %></td>
+        <td><%= generator.first_name %></td>
+        <td><%= generator.last_name %></td>
+        <td><%= generator.note %></td>
+        <td><% generator.status %></td>
+        <td><%= link_to 'Show', generator %></td>
+        <td><%= link_to 'Edit', edit_generator_path(generator) %></td>
+        <td><%= link_to 'Destroy', generator, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @generators %>
+  <%= link_to 'Back', admin_path, class: "btn btn-secondary btn-lg btn-block", style: "color: white; margin-top: 20px;" %>
+</div>

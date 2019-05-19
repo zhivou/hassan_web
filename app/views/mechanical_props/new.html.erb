@@ -1,0 +1,35 @@
+<%= javascript_include_tag('mechanical_props_r') %>
+
+<div class="container" style="margin-top: 20px">
+  <h1 class="display-4 text-center">AHSS Mechancal Properties Calculator</h1>
+
+  <h5 class="mt-5" style="line-height: 24px;"> Prediction of mechanical properties of Dual-Phase (DP) and Martensitic (MS) grades of AHSS based on their
+    <strong>bulk carbon content</strong> and <strong>initial microstructure</strong> (martensite volume fraction).
+  </h5>
+
+  <p class="text-left mb-4 mt-4" style="font-size: 15px; line-height: 24px;">
+    Calculations are based on a comprehensive study performed on six grades of DP and MS AHSS at different
+    thermal cycles similar to those occur in resistance spot welding process.
+    Details on materials and methodology used in calculations can be found in following journal paper:
+  </p>
+
+  <p class="text-left mb-3 mt-4" style="font-size: 15px; line-height: 24px;">H. Rezayat, H. Ghassemi-Armaki, S. P. Bhat, S. Sriram, S. S. Babu, <em><a href="https://link.springer.com/article/10.1007/s10853-018-03276-9">
+    Constitutive properties and plastic instabilities in
+    the heat-affected zones of advanced high-strength steel spot welds</a></em>, Journal of Materials Science, vol. 54, pp. 5825, 2019.
+  </p>
+
+  <p class="pol mb-5" style="font-size: 15px; line-height: 24px;"> ➔ For more information please contact: <a href="mailto:hrezayuat@vols.utk.edu">hrezayat@vols.utk.edu</a></p>
+  <p id="notice"><%= notice %></p>
+  <%= render 'form', mechanical_prop: @mechanical_prop %>
+
+  <div class="text-center" id="results">
+  </div>
+
+  <%= link_to 'New Calculation', new_mechanical_prop_path, class: "btn btn-success btn-lg btn-block", style: "color: white; display: none;", id: "newCalcButton" %>
+
+  <% if session[:user_id] %>
+    <%= link_to 'Admin Center', admin_path, class: "btn btn-secondary btn-lg btn-block", style: "color: white;" %>
+  <% else %>
+    <%= link_to 'Main Menu', generators_path, class: "btn btn-secondary btn-lg btn-block", style: "color: white;" %>
+  <% end %>
+</div>
